@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Hunter</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+    rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-6xl text-center">Phone Hunter</h1>
+    </header>
+    <main class="w-11/12 md:w-10/12 lg:w-4/5 mx-auto my-8">
+      <!-- input section -->
+      <section>
+            <div id="inputContainer" class="bg-black p-6 mb-6 rounded-xl flex gap-2">
+                <input id="inputField" type="text" placeholder="Search...." class="input input-bordered w-full max-w-xs"/>
+                <button onclick="searchPhones()" class="btn">Search</button>
+            </div>
+        </section>
+
+        <!-- Loader Spinner Section -->
+        <section class="relative">
+            <div id="loadingSpinner" class="fixed top-1/2 left-1/2 z-10 hidden">
+              <span class="loading loading-spinner loading-lg"></span>
+            </div>
+            <div id="phoneContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            </div>
+            <div id="showMoreSection" class="text-center mt-6 hidden">
+              <button onclick="handleShowAll()" class="btn btn-ghost font-bold">Show More...</button>
+            </div>
+        </section>
+
+        <!-- Modal Section -->
+        <section>
+          <dialog id="displayModal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+              <div id="phoneDetails"></div>
+              <div class="modal-action">
+                <form method="dialog">
+                  <button class="btn">Close</button>
+                </form>
+              </div>
+            </div>
+          </dialog>
+        </section>
+    </main>
+    <script src="js/index.js"></script>
+  </body>
+</html>
